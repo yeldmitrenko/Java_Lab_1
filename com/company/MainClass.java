@@ -1,5 +1,4 @@
 package com.company;
-import com.company.Dishwasher;
 
 public class MainClass {
     public static void main(String[] args) {
