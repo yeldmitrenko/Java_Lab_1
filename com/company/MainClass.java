@@ -12,5 +12,6 @@ public class MainClass {
                 23.6, 34.7);
         System.out.println(dishwasher2);
         Dishwasher.printStaticWarrantyDurationInDays();
+        dishwasher.printWarrantyDurationInDays();
     }
 }

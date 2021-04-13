@@ -145,16 +145,19 @@ public class Dishwasher {
     }
 
     public static void printStaticWarrantyDurationInDays() {
-        System.out.println(warrantyDurationInDays);
+        System.out.println("Warranty period is: " + warrantyDurationInDays+ " days");
     }
 
     public void printWarrantyDurationInDays() {
-        System.out.println(warrantyDurationInDays);
+        System.out.println("Warranty period is: " + warrantyDurationInDays+ " days");
     }
 
     public String toString() {
-        return waterConsumption+" "+programsNumber+" "+name+" "+numberUtensilsSets+" "+colour+" "+weight+" "+price+" "+
-                powerConsumptionInWatts+" "+producingCountry+" "+width+" "+length;
+        return "Dishwasher:\n\tWater consumption: " + waterConsumption + "\n\t" + "Number of programs: "
+                + programsNumber +"\n\t" + "Name: "+ name + "\n\t" + "Number of utensils sets: " + numberUtensilsSets
+                + "\n\t" + "Colour: " + colour + "\n\t" + "Weight: " + weight + "\n\t" + "Price: " + price + "\n\t" +
+                "Power consumption (in watts): " + powerConsumptionInWatts + "\n\t" + "Producing country: " +
+                producingCountry + "\n\t" + "Width: " + width + "\n\t" + "Length: " + length;
     }
 
     public void resetValues(int waterConsumption, int programsNumber, String name, int numberUtensilsSets, String colour,
@@ -171,6 +174,5 @@ public class Dishwasher {
         this.producingCountry = producingCountry;
         this.width = width;
         this.length = length;
-
     }
 }
