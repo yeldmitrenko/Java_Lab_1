@@ -1,46 +1,32 @@
 package com.company;
 
 public class Dishwasher {
-    private static int warrantyDurationInDays = 12000;
+    private static int numberOfObj = 0;
 
-    private int waterConsumption;
-    private int programsNumber;
+    private int waterConsumption = 0;
+    private int programsNumber = 0;
     private String name;
-    private int numberUtensilsSets;
+    private int numberUtensilsSets = 0;
 
     private String colour;
-    private double weight;
-    private double price;
-    private int powerConsumptionInWatts;
+    private double weight = 0;
+    private double price = 0;
+    private int powerConsumptionInWatts = 0;
     private String producingCountry;
 
-    protected double width;
-    protected double length;
+    protected double width = 0;
+    protected double length = 0;
 
     public Dishwasher() {
-        int warrantyDurationInDays = 0;
-
-        int waterConsumption = 0;
-        int programsNumber = 0;
-        String name;
-        int numberUtensilsSets = 0;
-
-        String colour;
-        double weight = 0;
-        double price = 0;
-        int powerConsumptionInWatts = 0;
-        String producingCountry;
-
-        double width = 0;
-        double length = 0;
+        numberOfObj += 1;
     }
 
     public Dishwasher(int waterConsumption, int programsNumber, String name, int numberUtensilsSets) {
-        this();
         this.waterConsumption = waterConsumption;
         this.programsNumber = programsNumber;
         this.name = name;
         this.numberUtensilsSets = numberUtensilsSets;
+        numberOfObj += 1;
     }
 
     public Dishwasher(int waterConsumption, int programsNumber, String name, int numberUtensilsSets, String colour,
@@ -145,13 +131,14 @@ public class Dishwasher {
     }
 
     public static void printStaticWarrantyDurationInDays() {
-        System.out.println("Warranty period is: " + warrantyDurationInDays+ " days");
+        System.out.println("The number of dishwashers: " + numberOfObj);
     }
 
     public void printWarrantyDurationInDays() {
-        System.out.println("Warranty period is: " + warrantyDurationInDays+ " days");
+        System.out.println("The number of dishwashers: " + numberOfObj);
     }
 
+    @Override
     public String toString() {
         return "Dishwasher:\n\tWater consumption: " + waterConsumption + "\n\t" + "Number of programs: "
                 + programsNumber +"\n\t" + "Name: "+ name + "\n\t" + "Number of utensils sets: " + numberUtensilsSets
