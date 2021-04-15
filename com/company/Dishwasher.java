@@ -1,45 +1,46 @@
 package com.company;
 
 public class Dishwasher {
-    private static int numberOfObj = 0;
+    private static int numberOfObj;
 
-    private int waterConsumption = 0;
-    private int programsNumber = 0;
+    private int waterConsumption;
+
+    private int programsNumber;
+
     private String name;
-    private int numberUtensilsSets = 0;
+
+    private int numberUtensilsSets;
 
     private String colour;
-    private double weight = 0;
-    private double price = 0;
-    private int powerConsumptionInWatts = 0;
+
+    private double weight;
+
+    private double price;
+
+    private int powerConsumptionInWatts;
+
     private String producingCountry;
 
-    protected double width = 0;
-    protected double length = 0;
+    protected double width;
+
+    protected double length;
 
     public Dishwasher() {
-        numberOfObj += 1;
-    }
-
-    public Dishwasher(int waterConsumption, int programsNumber, String name, int numberUtensilsSets) {
-        this.waterConsumption = waterConsumption;
-        this.programsNumber = programsNumber;
-        this.name = name;
-        this.numberUtensilsSets = numberUtensilsSets;
-        numberOfObj += 1;
+        numberOfObj++;
     }
 
     public Dishwasher(int waterConsumption, int programsNumber, String name, int numberUtensilsSets, String colour,
                       double weight, double price, int powerConsumptionInWatts, String producingCountry,
                       double width, double length) {
-        this(waterConsumption, programsNumber, name, numberUtensilsSets);
-        this.colour = colour;
-        this.weight = weight;
-        this.price = price;
-        this.powerConsumptionInWatts = powerConsumptionInWatts;
-        this.producingCountry = producingCountry;
-        this.width = width;
-        this.length = length;
+        setValues(waterConsumption, programsNumber, name, numberUtensilsSets, colour,
+                weight, price, powerConsumptionInWatts, producingCountry,
+                width, length);
+        numberOfObj++;
+    }
+
+    public Dishwasher(int waterConsumption, int programsNumber, String name, int numberUtensilsSets) {
+        this(waterConsumption, programsNumber, name, numberUtensilsSets, null, 0, 0,
+                0, null, 0, 0);
     }
 
     public int getWaterConsumption() {
@@ -130,24 +131,40 @@ public class Dishwasher {
         this.length = length;
     }
 
-    public static void printStaticWarrantyDurationInDays() {
-        System.out.println("The number of dishwashers: " + numberOfObj);
-    }
-
-    public void printWarrantyDurationInDays() {
-        System.out.println("The number of dishwashers: " + numberOfObj);
-    }
-
     @Override
     public String toString() {
-        return "Dishwasher:\n\tWater consumption: " + waterConsumption + "\n\t" + "Number of programs: "
-                + programsNumber +"\n\t" + "Name: "+ name + "\n\t" + "Number of utensils sets: " + numberUtensilsSets
-                + "\n\t" + "Colour: " + colour + "\n\t" + "Weight: " + weight + "\n\t" + "Price: " + price + "\n\t" +
-                "Power consumption (in watts): " + powerConsumptionInWatts + "\n\t" + "Producing country: " +
-                producingCountry + "\n\t" + "Width: " + width + "\n\t" + "Length: " + length;
+        return "Dishwasher{" +
+                "waterConsumption=" + waterConsumption +
+                ", programsNumber=" + programsNumber +
+                ", name='" + name + '\'' +
+                ", numberUtensilsSets=" + numberUtensilsSets +
+                ", colour='" + colour + '\'' +
+                ", weight=" + weight +
+                ", price=" + price +
+                ", powerConsumptionInWatts=" + powerConsumptionInWatts +
+                ", producingCountry='" + producingCountry + '\'' +
+                ", width=" + width +
+                ", length=" + length +
+                '}';
+    }
+
+    public static void printStaticNumberOfObjects() {
+        System.out.println("The number of dishwashers: " + numberOfObj);
+    }
+
+    public void printNumberOfObjects() {
+        System.out.println("The number of dishwashers: " + numberOfObj);
     }
 
     public void resetValues(int waterConsumption, int programsNumber, String name, int numberUtensilsSets, String colour,
+                            double weight, double price, int powerConsumptionInWatts, String producingCountry,
+                            double width, double length) {
+        setValues(waterConsumption, programsNumber, name, numberUtensilsSets, colour,
+        weight, price, powerConsumptionInWatts, producingCountry,
+        width, length);
+    }
+
+    public void setValues(int waterConsumption, int programsNumber, String name, int numberUtensilsSets, String colour,
                             double weight, double price, int powerConsumptionInWatts, String producingCountry,
                             double width, double length) {
         this.waterConsumption = waterConsumption;
