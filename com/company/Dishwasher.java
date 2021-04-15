@@ -164,7 +164,7 @@ public class Dishwasher {
         width, length);
     }
 
-    public void setValues(int waterConsumption, int programsNumber, String name, int numberUtensilsSets, String colour,
+    private void setValues(int waterConsumption, int programsNumber, String name, int numberUtensilsSets, String colour,
                             double weight, double price, int powerConsumptionInWatts, String producingCountry,
                             double width, double length) {
         this.waterConsumption = waterConsumption;
